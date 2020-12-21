@@ -56,6 +56,18 @@ class CollectionsMONITOR(object):
             description=u'通过筛选条件获取指定告警事件'
         )
 
+        self.get_alarm_strategy = ComponentAPI(
+            client=self.client, method='GET',
+            path='/api/c/compapi{bk_api_ver}/monitor/get_alarm_strategy/',
+            description=u'查询监控策略详情'
+        )
+
+        self.get_ts_data = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/monitor/get_ts_data/',
+            description=u'图表数据查询'
+        )
+
         self.import_alarm_strategy = ComponentAPI(
             client=self.client, method='POST',
             path='/api/c/compapi{bk_api_ver}/monitor/import_alarm_strategy/',
