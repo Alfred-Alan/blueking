@@ -115,3 +115,45 @@ class CollectionsMONITOR(object):
             path='/api/c/compapi{bk_api_ver}/monitor/query_data/',
             description=u'图表数据查询'
         )
+
+        self.metadata_create_data_id = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/monitor/metadata_create_data_id/',
+            description=u'创建监控数据源'
+        )
+
+        self.metadata_create_result_table = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/monitor/metadata_create_result_table/',
+            description=u'创建监控结果表'
+        )
+
+        self.metadata_get_data_id = ComponentAPI(
+            client=self.client, method='GET',
+            path='/api/c/compapi{bk_api_ver}/monitor/metadata_get_data_id/',
+            description=u'获取监控数据源具体信息'
+        )
+
+        self.metadata_get_result_table = ComponentAPI(
+            client=self.client, method='GET',
+            path='/api/c/compapi{bk_api_ver}/monitor/metadata_get_result_table/',
+            description=u'获取监控结果表具体信息'
+        )
+
+        self.metadata_list_result_table = ComponentAPI(
+            client=self.client, method='GET',
+            path='/api/c/compapi{bk_api_ver}/monitor/metadata_list_result_table/',
+            description=u'查询监控结果表'
+        )
+
+        self.metadata_modify_result_table = ComponentAPI(
+            client=self.client, method='GET',
+            path='/api/c/compapi{bk_api_ver}/monitor/metadata_modify_result_table/',
+            description=u'修改监控结果表'
+        )
+
+        self.save_alarm_strategy = ComponentAPI(
+            client=self.client, method='GET',
+            path='/api/c/compapi{bk_api_ver}/monitor/save_alarm_strategy/',
+            description=u'保存监控策略'
+        )
