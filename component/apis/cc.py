@@ -478,6 +478,11 @@ class CollectionsCC(object):
             path='/api/c/compapi{bk_api_ver}/cc/search_object_topo/',
             description=u'查询普通模型拓扑'
         )
+        self.search_related_inst_asso = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/cc/search_related_inst_asso/',
+            description=u'查询某实例所有的关联关系'
+        )
         self.search_objects = ComponentAPI(
             client=self.client, method='POST',
             path='/api/c/compapi{bk_api_ver}/cc/search_objects/',
@@ -642,4 +647,34 @@ class CollectionsCC(object):
             client=self.client, method='POST',
             path='/api/c/compapi{bk_api_ver}/cc/update_set_template/',
             description=u'编辑集群模板'
+        )
+        self.find_host_by_topo = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/cc/find_host_by_topo/',
+            description=u'查询拓扑节点下的主机'
+        )
+        self.find_module_with_relation = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/cc/find_module_with_relation/',
+            description=u'根据条件查询业务下的模块 '
+        )
+        self.find_module_with_relation = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/cc/find_module_with_relation/',
+            description=u'根据条件查询业务下的模块 '
+        )
+        self.list_process_detail_by_ids = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/cc/list_process_detail_by_ids/',
+            description=u'查询某业务下进程ID对应的进程详情'
+        )
+        self.list_service_instance_by_set_template = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/cc/list_service_instance_by_set_template/',
+            description=u'根据集群模版id获取服务实例列表'
+        )
+        self.search_dynamic_group = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/cc/search_dynamic_group/',
+            description=u'查询动态分组列表'
         )

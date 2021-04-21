@@ -153,3 +153,20 @@ class CollectionsSOPS(object):
             path='/api/c/compapi{bk_api_ver}/sops/start_task/',
             description=u'开始执行任务'
         )
+
+        self.claim_functionalization_task = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/sops/claim_functionalization_task/',
+            description=u'职能化任务认领'
+        )
+        self.get_task_list = ComponentAPI(
+            client=self.client, method='GET',
+            path='/api/c/compapi{bk_api_ver}/sops/get_task_list/',
+            description=u'获取某个业务下的任务列表，支持任务名关键词搜索'
+        )
+
+        self.modify_constants_for_task = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/sops/modify_constants_for_task/',
+            description=u'修改任务名称和变量'
+        )
