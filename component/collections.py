@@ -8,8 +8,9 @@ from .apis.gse import CollectionsGSE
 from .apis.itsm import CollectionsITSM
 from .apis.job import CollectionsJOB
 from .apis.sops import CollectionsSOPS
-from .apis.usermanage import CollectionsUSERMANAGE
 from .apis.monitor import CollectionsMONITOR
+from .apis.usermanage import CollectionsUSERMANAGE
+from .apis.log_search import CollectionsLogSearch
 
 
 # Available components
@@ -24,4 +25,5 @@ AVAILABLE_COLLECTIONS = {
     'sops': CollectionsSOPS,
     'monitor': CollectionsMONITOR,
     'usermanage': CollectionsUSERMANAGE,
+    'log_search': CollectionsLogSearch
 }
