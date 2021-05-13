@@ -14,10 +14,70 @@ class CollectionsMONITOR(object):
             description=u'创建屏蔽配置'
         )
 
+        self.batch_retry_config = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/batch_retry_config/',
+            description=u'批量重试采集配置的失败实例'
+        )
+
+        self.batch_retry_instance_step = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/batch_retry_instance_step/',
+            description=u'重试失败节点的步骤'
+        )
+
+        self.collect_running_status = ComponentAPI(
+            client=self.client, method='GET',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/collect_running_status/',
+            description=u'获取采集配置主机的运行状态'
+        )
+
+        self.create_custom_event_group = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/create_custom_event_group/',
+            description=u'创建自定义事件'
+        )
+
+        self.create_custom_time_series = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/create_custom_time_series/',
+            description=u'创建自定义指标'
+        )
+
+        self.custom_time_series = ComponentAPI(
+            client=self.client, method='GET',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/custom_time_series/',
+            description=u'自定义指标列表'
+        )
+
+        self.custom_time_series_detail = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/custom_time_series_detail/',
+            description=u'获取自定义指标详情'
+        )
+
         self.delete_alarm_strategy = ComponentAPI(
             client=self.client, method='POST',
             path='/api/c/compapi{bk_api_ver}/monitor_v3/delete_alarm_strategy/',
             description=u'删除告警策略'
+        )
+
+        self.delete_collect_config = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/delete_collect_config/',
+            description=u'删除采集配置'
+        )
+
+        self.delete_custom_event_group = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/delete_custom_event_group/',
+            description=u'删除自定义事件'
+        )
+
+        self.delete_custom_time_series = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/delete_custom_time_series/',
+            description=u'删除自定义指标'
         )
 
         self.delete_notice_group = ComponentAPI(
@@ -50,10 +110,22 @@ class CollectionsMONITOR(object):
             description=u'采集配置列表'
         )
 
+        self.get_collect_log_detail = ComponentAPI(
+            client=self.client, method='GET',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/get_collect_log_detail/',
+            description=u'获取采集下发详细日志'
+        )
+
         self.get_collect_status = ComponentAPI(
             client=self.client, method='GET',
             path='/api/c/compapi{bk_api_ver}/monitor_v3/get_collect_status/',
             description=u'查询采集配置节点状态'
+        )
+
+        self.get_custom_event_group = ComponentAPI(
+            client=self.client, method='GET',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/get_custom_event_group/',
+            description=u'获取自定义事件详情'
         )
 
         self.get_es_data = ComponentAPI(
@@ -212,6 +284,12 @@ class CollectionsMONITOR(object):
             description=u'查询监控结果表'
         )
 
+        self.metadata_list_transfer_cluster = ComponentAPI(
+            client=self.client, method='GET',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/metadata_list_transfer_cluster/',
+            description=u'获取所有transfer集群信息'
+        )
+
         self.metadata_modify_cluster_info = ComponentAPI(
             client=self.client, method='POST',
             path='/api/c/compapi{bk_api_ver}/monitor_v3/metadata_modify_cluster_info/',
@@ -266,10 +344,46 @@ class CollectionsMONITOR(object):
             description=u'将指定的监控单业务结果表升级为全业务结果表'
         )
 
+        self.modify_custom_event_group = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/modify_custom_event_group/',
+            description=u'修改自定义事件'
+        )
+
+        self.modify_custom_time_series = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/modify_custom_time_series/',
+            description=u'修改自定义指标'
+        )
+
+        self.proxy_host_info = ComponentAPI(
+            client=self.client, method='GET',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/proxy_host_info/',
+            description=u'获取自定义上报的proxy主机信息'
+        )
+
         self.query_collect_config = ComponentAPI(
             client=self.client, method='POST',
             path='/api/c/compapi{bk_api_ver}/monitor_v3/query_collect_config/',
             description=u'查询采集配置'
+        )
+
+        self.query_custom_event_group = ComponentAPI(
+            client=self.client, method='GET',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/query_custom_event_group/',
+            description=u'获取业务下自定义事件列表'
+        )
+
+        self.retry_target_nodes = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/retry_target_nodes/',
+            description=u'重试部分实例或主机'
+        )
+
+        self.rollback_deployment_config = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/rollback_deployment_config/',
+            description=u'采集配置回滚'
         )
 
         self.save_alarm_strategy = ComponentAPI(
@@ -312,4 +426,28 @@ class CollectionsMONITOR(object):
             client=self.client, method='POST',
             path='/api/c/compapi{bk_api_ver}/monitor_v3/switch_alarm_strategy/',
             description=u'启停告警策略'
+        )
+
+        self.toggle_collect_config_status = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/toggle_collect_config_status/',
+            description=u'启停采集配置'
+        )
+
+        self.upgrade_collect_plugin = ComponentAPI(
+            client=self.client, method='POST',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/upgrade_collect_plugin/',
+            description=u'采集配置插件升级'
+        )
+
+        self.validate_custom_event_group_name = ComponentAPI(
+            client=self.client, method='GET',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/validate_custom_event_group_name/',
+            description=u'校验自定义事件名称是否合法'
+        )
+
+        self.validate_custom_ts_group_name = ComponentAPI(
+            client=self.client, method='GET',
+            path='/api/c/compapi{bk_api_ver}/monitor_v3/validate_custom_ts_group_name/',
+            description=u'校验自定义指标名称是否合法'
         )
