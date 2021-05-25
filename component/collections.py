@@ -5,6 +5,7 @@ from .apis.bk_paas import CollectionsBkPaas
 from .apis.cc import CollectionsCC
 from .apis.cmsi import CollectionsCMSI
 from .apis.gse import CollectionsGSE
+from .apis.iam import CollectionsIAM
 from .apis.itsm import CollectionsITSM
 from .apis.job import CollectionsJOB
 from .apis.sops import CollectionsSOPS
@@ -25,5 +26,6 @@ AVAILABLE_COLLECTIONS = {
     'sops': CollectionsSOPS,
     'monitor': CollectionsMONITOR,
     'usermanage': CollectionsUSERMANAGE,
-    'log_search': CollectionsLogSearch
+    'log_search': CollectionsLogSearch,
+    'iam': CollectionsIAM
 }
